@@ -29,57 +29,59 @@
 - Pandas
 - NumPy
 - Matplotlib
+- Chardet
 
 ---
 
-## Další kapitola
+## Použití
+1. **Nahrajte do složky /shop_analyzer/data/ CSV dokument, který chcete analyzovat**
+   - Například: *nakupy.csv*
 
-Instalace
 
-Klonujte nebo stáhněte tento repozitář.
-
-Ujistěte se, že máte nainstalovaný Python (verze 3.8 nebo novější).
-
-Nainstalujte požadované balíčky:
-
-pip install -r requirements.txt
-
-Použití
-
-Spusťte aplikaci pomocí příkazové řádky:
-
+2. **Spusťte aplikaci pomocí příkazové řádky:**  
 python main.py <název_souboru.csv>
+   - Například: *python main.py nakupy.csv*
 
-Například:
 
-python main.py nakupy.csv
+3. **Grafy se vygenerují do složky /shop_analyzer/output/reports/**
+   Ve složce se vygenerují 3 grafy:
+   - Rozdělení výdajů dle kategorií kupovaných položek
+   - Měsíční souhrny výdajů
+   - Top 5 nakupovaných položek
 
-Struktura projektu
+---
 
-data_loader.py: Modul pro načítání a validaci dat.
+## Struktura projektu
 
-analyzer.py: Modul pro analýzu dat.
+**data_loader.py**: Modul pro načítání a validaci dat.
 
-visualizer.py: Modul pro vizualizaci dat.
+**analyzer.py**: Modul pro analýzu dat.
 
-main.py: Hlavní spouštěcí skript propojující všechny komponenty.
+**visualizer.py**: Modul pro vizualizaci dat.
 
-output/reports: Složka pro ukládání vygenerovaných grafů.
+**main.py**: Hlavní spouštěcí skript propojující všechny komponenty.
 
-Zamýšlená rozšíření
+**data**: Složka pro nahrávání analzovaných CSV dokumentů.
 
-Uživatelské rozhraní:
+**output/reports**: Složka pro ukládání vygenerovaných grafů.
+
+---
+
+## Zamýšlená rozšíření
+
+**Uživatelské rozhraní**:
 
 Implementace webového nebo desktopového uživatelského rozhraní pro snadnější interakci s aplikací.
 
-Načítání dat z obrázků účtenek:
+**Načítání dat z obrázků účtenek**:
 
 Integrace OCR technologie pro extrakci dat přímo z naskenovaných účtenek.
 
-
+---
 
 Aplikace byla vytvořena jako ukázkový projekt pro procvičení práce s Pythonem, datovou analýzou a vizualizací.
 
+---
 
 shop_analyzer/
 ├── data/
