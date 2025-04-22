@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+body{
+    font-family: Quicksand;
+}
+
+html{
+    font-size: 62.5%;
+}
+/* 1rem === 16 px -> 1rem === 10px */
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.analog-clock {
+    width: 50rem;
+    height: 50rem;
+    border: 2rem solid #3ba49d;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    box-shadow: 0 0 2rem gray;
+}
+
+.center {
+    width: 2rem;
+    height: 2rem;
+    background-color: #3ba49d;
+    border-radius: 50%;
+    position: absolute;
+    top: 24rem;
+    left: 24rem;
+}
+
+.hour {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #166964;
+    position: absolute;
+}
+.hour-1 {
+    top: 4rem;
+    right: 13rem;
+}
+.hour-2 {
+    top: 12.5rem;
+    right: 4.5rem;
+}
+.hour-3 {
+    top: 23.5rem;
+    right: 1rem;
+}
+.hour-4 {
+    top: 34.5rem;
+    right: 4.5rem;
+}
+.hour-5 {
+    top: 43rem;
+    right: 13rem;
+}
+.hour-6 {
+    bottom: 1rem;
+    left: 24rem;
+}
+.hour-7 {
+    top: 43rem;
+    left: 13rem;
+}
+.hour-8 {
+    top: 34.5rem;
+    left: 4.5rem;
+}
+.hour-9 {
+    top: 23.5rem;
+    left: 1rem;
+}
+.hour-10 {
+    top: 12.5rem;
+    left: 4.5rem;
+}
+.hour-11 {
+    top: 4rem;
+    left: 13rem;
+}
+.hour-12 {
+    top: 1rem;
+    left: 23.5rem;
+}
+
+.brand {
+    font-size: 2rem;
+    font-weight: bold;
+    color:#166964;
+    position: absolute;
+    bottom: 9rem;
+    left: 43.5%;
+    letter-spacing: 0.1rem;
+}
+
+.minute-handle-container {
+    width: 40rem;
+    height: 40rem;
+    position: absolute;
+    top: 5rem;
+    left: 5rem;
+    border-radius: 50%;
+}
+
+.minute-handle {
+    position: relative;
+}
+.minute-handle .handle {
+    width: .4rem;
+    height: 20rem;
+    background-color: #3ba49d;
+    position: absolute;
+    left: 19.8rem;
+}
+.minute-handle .arrow {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3ba49d;
+    transform: rotate(180deg);
+    position: absolute;
+    left: 19rem;
+    top: -1rem;
+}
+
+.hour-handle-container {
+    width: 30rem;
+    height: 30rem;
+    position: absolute;
+    top: 10rem;
+    left: 10rem;
+    border-radius: 50%;
+}
+.hour-handle {
+    position: relative;
+}
+.hour-handle .handle {
+    width: .4rem;
+    height: 15rem;
+    background-color: #3ba49d;
+    position: absolute;
+    left: 14.8rem;
+}
+.hour-handle .arrow {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3ba49d;
+    transform: rotate(180deg);
+    position: absolute;
+    left: 14rem;
+    top: -1rem;
+}
+
+.second-handle-container {
+    width: 35rem;
+    height: 35rem;
+    position: absolute;
+    top: 7.5rem;
+    left: 7.5rem;
+    border-radius: 50%;
+}
+.second-handle {
+    position: relative;
+}
+.second-handle .handle {
+    width: .2rem;
+    height: 17.5rem;
+    background-color: #3ba49d;
+    position: absolute;
+    left: 17.4rem;
+}
