@@ -2,8 +2,8 @@ from decimal import Decimal
 
 # Deposits
 years = int(20)
-annual_interest_rate = Decimal(0.07)
-entry_deposit = Decimal(1000.00)
+annual_interest_rate = Decimal(0.05)
+entry_deposit = Decimal(5000.00)
 
 periodic_deposit = Decimal(1000.00)
 deposits_per_year = int(12)
@@ -22,9 +22,9 @@ if additional_contribution_exists:
 
 
 # Fees
-entry_fee_proportional_to_amount = False
+entry_fee_proportional_to_amount = True
 if entry_fee_proportional_to_amount:
-    entry_fee = entry_deposit * Decimal(0.00)
+    entry_fee = entry_deposit * Decimal(0.0015)
 else:
     entry_fee = Decimal(0.00)
 
@@ -95,3 +95,5 @@ else:
 print(f'Celkový vložený obnos {total_deposits_amount} CZK')
 # Print the total amount achieved over years of saving/investing
 print(f'Celková naspořená částka {total_amount} CZK')
+print(f'FV za vstupní vklad: {future_value_from_entry}'
+      f'\nFV za periodický vklad {total_amount_from_periodic_deposits}')
