@@ -4,15 +4,23 @@ from retirement import simulate_withdrawal_until_depleted
 
 
 snp_etf = InvestmentContext(18, 0.08, CompoundingFrequency.PER_DIEM, 0.0003, InterestType.NOMINAL, 0.0)
-vstupni_vklad = Deposit(DepositType.ENTRY, 0, 0, 0.0015, FeeType.PROPORTIONAL, AnnuityType.DUE,)
-periodicky_vklad = Deposit(DepositType.PERIODIC, 2000, 12, 0.0015, FeeType.PROPORTIONAL, AnnuityType.DUE,)
+vstupni_vklad = Deposit(DepositType.ENTRY, 0, 0, 0.0015, FeeType.PROPORTIONAL, AnnuityType.DUE)
+periodicky_vklad = Deposit(DepositType.PERIODIC, 2000, 12, 0.0015, FeeType.PROPORTIONAL, AnnuityType.DUE)
 
+projections = generate_yearly_projection(snp_etf.years, snp_etf, [vstupni_vklad, periodicky_vklad], Decimal(0.02),)
+for p in projections:
+      print(f'Pro rok {p.year} vloženo {int(p.total_deposited)} CZK a naspořeno {int(p.total_value_nominal)} CZK - reálná kupní síla: {int(p.total_value_real)} CZK.')
+
+print('\n')
+
+sporeni = InvestmentContext(18, 0.05, 1, 0.015, InterestType.NOMINAL, Decimal(0))
+iniciace_sporeni = Deposit(DepositType.ENTRY, 1000, 0, 0, FeeType.FIXED, AnnuityType.DUE)
+periodicke_sporeni = Deposit(DepositType.PERIODIC, 2000, 12, 0, FeeType.FIXED, AnnuityType.DUE)
 vyrocni_prispevek = Deposit(DepositType.PERIODIC, 2000, 1, 0, FeeType.PROPORTIONAL, AnnuityType.ORDINARY)
 
-projections = generate_yearly_projection(snp_etf.years, snp_etf, vstupni_vklad, periodicky_vklad, Decimal(0.02),)
-
+projections = generate_yearly_projection(sporeni.years, sporeni, [iniciace_sporeni, periodicke_sporeni, vyrocni_prispevek], Decimal(0.02))
 for p in projections:
-      print(f'Pro rok {p.year} vloženo {int(p.total_deposited)} CZK a naspořeno {int(p.total_value)} CZK - reálná kupní síla: {int(p.total_value_real)} CZK.')
+      print(f'Pro rok {p.year} vloženo {int(p.total_deposited)} CZK a naspořeno {int(p.total_value_nominal)} CZK - reálná kupní síla: {int(p.total_value_real)} CZK.')
 
 
 """

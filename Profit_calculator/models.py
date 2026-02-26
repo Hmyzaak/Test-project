@@ -149,7 +149,7 @@ class Deposit:
             if self.deposits_per_year <= 0:
                 raise ValueError("for deposit_type == 'periodic' value of deposits_per_year must be greater than 0")
             elif self.deposits_per_year == context.compounding_per_year:
-                # classic formula for future value
+                # classic formula for future value - faster calculation than time simulation
                 future_value_annuity = (self.amount - self.fee) * ((((Decimal(1) + context.calculate_periodic_interest_rate()) ** (Decimal(self.deposits_per_year) * Decimal(context.years))) - 1) / context.calculate_periodic_interest_rate())
                 if self.annuity_type == AnnuityType.DUE:
                     future_value_annuity *= (Decimal(1) + context.calculate_periodic_interest_rate())
