@@ -58,6 +58,7 @@ class InvestmentContext:
         # Annotation of investment in CZE
         return print(f'Investice na {self.years} let s úrokem {self.annual_interest_rate} kapitalizovaným {self.compounding_per_year}-krát ročně a ročním poplatkem {self.ter_fee}.')
 
+    # Zamyšlení k výpočtu "apply_ter" a "apply_tax": zvážit oddělení těchto dvou výpočtů a zahrnout možnost vypnutí daně po časovém testu
     def calculate_annual_interest_rate(self):
         # Invalid input
         if self.annual_interest_rate <= 0:
